@@ -28,4 +28,4 @@ if res.status_code == 200:
     print("Image downloaded successfully.")
     shutil.move(file_name, "images/")
 else:
-    print("Image couldn't be retreived.")
+    print("Image couldn't be retrieved.")
