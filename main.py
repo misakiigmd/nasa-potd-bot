@@ -29,3 +29,8 @@ if res.status_code == 200:
     shutil.move(file_name, "images/")
 else:
     print("Image couldn't be retrieved.")
+    
+# Post a tweet with the image and the title
+media_id = api.simple_upload(filename="images/" + file_name).media_id_string
+client.create_tweet(text="Astronomy Picture of the Day: \n" + data["title"] + "\nMore infos here: https://apod.nasa.gov/apod", media_ids=[media_id])
+print("Tweet posted successfully.")
