@@ -18,7 +18,6 @@ api = tweepy.API(auth)
 r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={creds['NASA_API_KEY']}")
 data = r.json()
 
-# If the APOD is a video, this following code will crash
 img_url = data["hdurl"]
 file_name = data["date"] + ".jpg"
 
