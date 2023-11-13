@@ -20,6 +20,7 @@ data = r.json()
 
 img_url = data["hdurl"]
 file_name = data["date"] + ".jpg"
+date = data["date"][2:4] + data["date"][5:7] + data["date"][8:10]
 
 res = requests.get(img_url, stream=True)
 if res.status_code == 200:
